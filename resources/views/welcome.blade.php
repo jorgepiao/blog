@@ -13,7 +13,7 @@
                     <span class="c-gray-1">{{ $post->fecha_publicacion->format('M d') }}</span>
                 </div>
                 <div class="post-category">
-                    <span class="category text-capitalize">i do travel</span>
+                    <span class="category text-capitalize">{{ $post->categoria->nombre }}</span>
                 </div>
             </header>
             <h1>{{ $post->titulo }}</h1>
