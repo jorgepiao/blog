@@ -1,5 +1,11 @@
 <?php
 
 Route::get('/', function () {
-    return view('welcome');
+    $posts = App\Post::latest('fecha_publicacion')->get();
+
+    return view('welcome', compact('posts'));
+});
+
+Route::get('posts', function(){
+    return App\Post::all();
 });
