@@ -14,7 +14,10 @@ Route::get('admin', function(){
     return view('admin.dashboard');
 });
 
+<<<<<<< HEAD
 // Authentication Routes...
+=======
+>>>>>>> 390b983cc6aeebfd2855693da1061072852daa4b
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
