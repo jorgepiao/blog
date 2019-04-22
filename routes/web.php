@@ -10,9 +10,9 @@ Route::get('/', function () {
 //     return App\Post::all();
 // });
 
-Route::get('admin', function(){
+Route::get('home', function(){
     return view('admin.dashboard');
-});
+})->middleware('auth');
 
 
 // Authentication Routes...
