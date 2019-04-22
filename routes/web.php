@@ -1,19 +1,17 @@
 <?php
 
-Route::get('/', function () {
-    $posts = App\Post::latest('fecha_publicacion')->get();
+Route::get('/', 'PaginasController@home');
 
-    return view('welcome', compact('posts'));
+Route::get('home', 'HomeController@index');
+
+Route::group([
+    'prefix' => 'admin', 
+    'namespace' => 'Admin', 
+    'middleware' => 'auth'], 
+function(){
+    Route::get('posts', 'PostsController@index');
+    // rutas de administracion
 });
-
-// Route::get('posts', function(){
-//     return App\Post::all();
-// });
-
-Route::get('home', function(){
-    return view('admin.dashboard');
-})->middleware('auth');
-
 
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
