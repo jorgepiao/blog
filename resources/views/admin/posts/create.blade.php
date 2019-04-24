@@ -19,8 +19,6 @@
 
     <div class="col-md-8">
         <div class="box box-primary">
-
-            
                 <div class="box-body">
                     <div class="form-group">
                         <label>Titulo de la publicacion</label>
@@ -38,18 +36,60 @@
 
     <div class="col-md-4">
         <div class="box box-primary">
-            
             <div class="box-body">
+
+                <div class="form-group">
+                    <label>Fecha de publicacion:</label>
+
+                    <div class="input-group date">
+                        <div class="input-group-addon">
+                            <i class="fa fa-calendar"></i>
+                        </div>
+                        <input name="fecha_publicacion" type="text" class="form-control pull-right" id="datepicker">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Categorias</label>
+                    <select class="form-control">
+                        <option value="">Selecciona una categoria</option>
+                        @foreach($categorias as $categoria)
+                            <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
                 <div class="form-group">
                     <label>Extracto publicacion</label>
                     <textarea name="extracto" class="form-control" placeholder="Ingresa un extracto de la publicacion"></textarea>
                 </div>
+                    <button type="submit" class="btn btn-primary btn-block">Guardar publicacion</button>
+                <div class="form-group">
+
+                </div>
+
             </div>
         </div>
     </div>
-    
+
     </form>
 
 </div>
 
 @stop
+
+@push('styles')
+    <link rel="stylesheet" href="/adminlte/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+@endpush
+
+@push('scripts')
+    <script src="/adminlte/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
+
+    <script>
+        $('#datepicker').datepicker({
+        autoclose: true
+        });
+    </script>
+    
+@endpush
+

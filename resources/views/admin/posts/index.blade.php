@@ -49,3 +49,28 @@
 </div>
 <!-- /.box -->
 @stop
+
+@push('styles')
+    <link rel="stylesheet" href="/adminlte/plugins/datatables.net-bs/css/dataTables.bootstrap.min.css">
+@endpush
+
+@push('scripts')
+    <script src="/adminlte/plugins/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="/adminlte/plugins/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+
+    <script>
+        $(function () {
+            $('#posts-table').DataTable(
+            // {
+            // 'paging'      : true,
+            // 'lengthChange': false,
+            // 'searching'   : false,
+            // 'ordering'    : true,
+            // 'info'        : true,
+            // 'autoWidth'   : false
+            // }
+            );
+        });
+    </script>
+    
+@endpush
