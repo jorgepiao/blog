@@ -27,7 +27,7 @@
                     
                     <div class="form-group">
                         <label>Contenido publicacion</label>
-                        <textarea rows="10" name="cuerpo" class="form-control" placeholder="Ingresa el contenido completo de la publicacion"></textarea>
+                        <textarea rows="10" name="cuerpo" id="editor" class="form-control" placeholder="Ingresa el contenido completo de la publicacion"></textarea>
                     </div>
                 </div>
             
@@ -60,6 +60,17 @@
                 </div>
 
                 <div class="form-group">
+                    <label>Etiquetas</label>
+                    <select class="form-control select2"
+                            multiple="multiple" 
+                            data-placeholder="Selecciona una o mas etiquetas" style="width: 100%;">
+                        @foreach($tags as $tag)
+                            <option value="{{ $tag->id }}">{{ $tag->nombre }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <div class="form-group">
                     <label>Extracto publicacion</label>
                     <textarea name="extracto" class="form-control" placeholder="Ingresa un extracto de la publicacion"></textarea>
                 </div>
@@ -80,15 +91,20 @@
 
 @push('styles')
     <link rel="stylesheet" href="/adminlte/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="/adminlte/plugins/select2/dist/css/select2.min.css">
 @endpush
 
 @push('scripts')
+    <script src="/adminlte/plugins/ckeditor/ckeditor.js"></script>
+    <script src="/adminlte/plugins/select2/dist/js/select2.full.min.js"></script>
     <script src="/adminlte/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js"></script>
 
     <script>
         $('#datepicker').datepicker({
         autoclose: true
         });
+        $('.select2').select2();
+        CKEDITOR.replace('editor');
     </script>
     
 @endpush
