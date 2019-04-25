@@ -28,14 +28,20 @@ class PostsController extends Controller
 
     public function store(Request $request)
     {
-        // validacion
-        // return Post::create($request->all());
 
+        $this->validate($request, [
+            'titulo' => 'required',
+            'cuerpo' => 'required',
+            'categoria' => 'required',
+            'tags' => 'required',
+            'extracto' => 'required'
+        ]);
+        // return Post::create($request->all());
         $post = new Post;
         $post->titulo = $request->get('titulo');
         $post->cuerpo = $request->get('cuerpo');
         $post->extracto = $request->get('extracto');
-        $post->fecha_publicacion = Carbon::parse($request->get('fecha_publicacion'));
+        $post->fecha_publicacion = $request->has('fecha_publicacion') ? Carbon::parse($request->get('fecha_publicacion')) : null;
         $post->categoria_id = $request->get('categoria');
         $post->save();
         
