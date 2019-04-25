@@ -41,7 +41,7 @@ class PostsController extends Controller
         $post->titulo = $request->get('titulo');
         $post->cuerpo = $request->get('cuerpo');
         $post->extracto = $request->get('extracto');
-        $post->fecha_publicacion = $request->has('fecha_publicacion') ? Carbon::parse($request->get('fecha_publicacion')) : null;
+        $post->fecha_publicacion = $request->get('fecha_publicacion') ?Carbon::parse($request->get('fecha_publicacion')) : null;
         $post->categoria_id = $request->get('categoria');
         $post->save();
         

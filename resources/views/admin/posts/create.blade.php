@@ -20,23 +20,23 @@
     <div class="col-md-8">
         <div class="box box-primary">
 
-                <div class="box-body">
-                    <div class="form-group {{ $errors->has('titulo') ? 'has-error' : '' }}">
-                        <label>Titulo de la publicacion</label>
-                        <input name="titulo" 
-                            class="form-control"
-                            value="{{ old('titulo') }}"
-                            placeholder="Ingresa aqui el titulo de la publicacion">
-                        {!! $errors->first('titulo', '<span class="help-block">:message</span>') !!}
-                        
-                    </div>
+            <div class="box-body">
+                <div class="form-group {{ $errors->has('titulo') ? 'has-error' : '' }}">
+                    <label>Titulo de la publicacion</label>
+                    <input name="titulo" 
+                        class="form-control"
+                        value="{{ old('titulo') }}"
+                        placeholder="Ingresa aqui el titulo de la publicacion">
+                    {!! $errors->first('titulo', '<span class="help-block">:message</span>') !!}
                     
-                    <div class="form-group {{ $errors->has('cuerpo') ? 'has-error' : '' }}">
-                        <label>Contenido publicacion</label>
-                        <textarea rows="10" name="cuerpo" id="editor" class="form-control" placeholder="Ingresa el contenido completo de la publicacion">{{ old('cuerpo') }}</textarea>
-                        {!! $errors->first('cuerpo', '<span class="help-block">:message</span>') !!}
-                    </div>
                 </div>
+                
+                <div class="form-group {{ $errors->has('cuerpo') ? 'has-error' : '' }}">
+                    <label>Contenido publicacion</label>
+                    <textarea rows="10" name="cuerpo" id="editor" class="form-control" placeholder="Ingresa el contenido completo de la publicacion">{{ old('cuerpo') }}</textarea>
+                    {!! $errors->first('cuerpo', '<span class="help-block">:message</span>') !!}
+                </div>
+            </div>
             
         </div>
     </div>
