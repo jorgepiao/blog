@@ -15,10 +15,11 @@
 @section('content')
     
 <div class="row">
-<form>  
-
+    <form method="POST" action="{{ route('admin.posts.store') }}">  
+    {{ csrf_field() }}
     <div class="col-md-8">
         <div class="box box-primary">
+
                 <div class="box-body">
                     <div class="form-group">
                         <label>Titulo de la publicacion</label>
@@ -51,7 +52,7 @@
 
                 <div class="form-group">
                     <label>Categorias</label>
-                    <select class="form-control">
+                    <select name="categoria" class="form-control">
                         <option value="">Selecciona una categoria</option>
                         @foreach($categorias as $categoria)
                             <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
@@ -61,10 +62,10 @@
 
                 <div class="form-group">
                     <label>Etiquetas</label>
-                    <select class="form-control select2"
-                            multiple="multiple" 
+                    <select name="tags[]" class="form-control select2"
+                            multiple="multiple"
                             data-placeholder="Selecciona una o mas etiquetas" style="width: 100%;">
-                        @foreach($tags as $tag)
+                        @foreach ($tags as $tag)
                             <option value="{{ $tag->id }}">{{ $tag->nombre }}</option>
                         @endforeach
                     </select>
@@ -82,7 +83,6 @@
             </div>
         </div>
     </div>
-
     </form>
 
 </div>
@@ -101,7 +101,7 @@
 
     <script>
         $('#datepicker').datepicker({
-        autoclose: true
+            autoclose: true
         });
         $('.select2').select2();
         CKEDITOR.replace('editor');

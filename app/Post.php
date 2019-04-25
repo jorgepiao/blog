@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
+    protected $guarded = [];
+
     protected $dates = ['fecha_publicacion'];
 
     // Relacion uno a muchos
