@@ -1,5 +1,8 @@
 @extends('layout')
 
+@section('meta-title', $post->titulo)
+@section('meta-description', $post->extracto)
+
 @section('content')
     <article class="post image-w-text container">
         <div class="content-post">
@@ -8,7 +11,7 @@
             <span class="c-gris">{{ $post->fecha_publicacion->format('M d') }}</span>
             </div>
             <div class="post-category">
-            <span class="category">{{ $post->categoria->nombre }}</span>
+            <span class="category ">{{ $post->categoria->nombre }}</span>
             </div>
         </header>
         <h1>{{ $post->titulo }}</h1>
