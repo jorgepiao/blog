@@ -11,6 +11,12 @@ class Post extends Model
 
     protected $dates = ['fecha_publicacion'];
 
+    public function getRouteKeyName()
+    {
+        return 'url';
+    }
+
+
     // Relacion uno a muchos
     public function categoria ()
     {

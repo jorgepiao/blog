@@ -39,6 +39,7 @@ class PostsController extends Controller
         // return Post::create($request->all());
         $post = new Post;
         $post->titulo = $request->get('titulo');
+        $post->url = str_slug($request->get('titulo'));
         $post->cuerpo = $request->get('cuerpo');
         $post->extracto = $request->get('extracto');
         $post->fecha_publicacion = $request->get('fecha_publicacion') ?Carbon::parse($request->get('fecha_publicacion')) : null;
