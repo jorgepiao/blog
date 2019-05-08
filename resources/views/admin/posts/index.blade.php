@@ -40,8 +40,11 @@
                 <td>{{ $post->titulo }}</td>
                 <td>{{ $post->extracto }}</td>
                 <td>
-                    <a href="#" class="btn btn-xs btn-default"> <i class="fa fa-eye"></i> </a>
-                    <a href="#" class="btn btn-xs btn-info"> <i class="fa fa-pencil"></i> </a>
+                    <a href="{{ route('posts.show', $post) }}"
+                        class="btn btn-xs btn-default"
+                        target="_blank"
+                        ><i class="fa fa-eye"></i> </a>
+                    <a href="{{ route('admin.posts.edit', $post) }}" class="btn btn-xs btn-info"> <i class="fa fa-pencil"></i> </a>
                     <a href="#" class="btn btn-xs btn-danger"> <i class="fa fa-times"></i> </a>
                 </td>
             </tr>
