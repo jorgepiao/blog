@@ -18,13 +18,13 @@ class PostsController extends Controller
         return view('admin.posts.index', compact('posts'));
     }
 
-    public function create()
-    {
-        $categorias = Categoria::all();
-        $tags = Tag::all();
+    // public function create()
+    // {
+    //     $categorias = Categoria::all();
+    //     $tags = Tag::all();
 
-        return view('admin.posts.create', compact('categorias', 'tags'));
-    }
+    //     return view('admin.posts.create', compact('categorias', 'tags'));
+    // }
 
     public function store(Request $request)
     {
@@ -40,31 +40,33 @@ class PostsController extends Controller
 
     public function edit(Post $post)
     {
-        return view('admin.posts.edit', compact('post'));
+        $categorias = Categoria::all();
+        $tags = Tag::all();
+
+        return view('admin.posts.edit', compact('categorias', 'tags', 'post'));
     }
 
-    // public function store(Request $request)
-    // {
+    public function update(Post $post, Request $request)
+    {
 
-    //     $this->validate($request, [
-    //         'titulo' => 'required',
-    //         'cuerpo' => 'required',
-    //         'categoria' => 'required',
-    //         'tags' => 'required',
-    //         'extracto' => 'required'
-    //     ]);
-    //     // return Post::create($request->all());
-    //     $post = new Post;
-    //     $post->titulo = $request->get('titulo');
-    //     $post->url = str_slug($request->get('titulo'));
-    //     $post->cuerpo = $request->get('cuerpo');
-    //     $post->extracto = $request->get('extracto');
-    //     $post->fecha_publicacion = $request->get('fecha_publicacion') ?Carbon::parse($request->get('fecha_publicacion')) : null;
-    //     $post->categoria_id = $request->get('categoria');
-    //     $post->save();
+        $this->validate($request, [
+            'titulo' => 'required',
+            'cuerpo' => 'required',
+            'categoria' => 'required',
+            'tags' => 'required',
+            'extracto' => 'required'
+        ]);
+        // return Post::create($request->all());
+        $post->titulo = $request->get('titulo');
+        $post->url = str_slug($request->get('titulo'));
+        $post->cuerpo = $request->get('cuerpo');
+        $post->extracto = $request->get('extracto');
+        $post->fecha_publicacion = $request->get('fecha_publicacion') ?Carbon::parse($request->get('fecha_publicacion')) : null;
+        $post->categoria_id = $request->get('categoria');
+        $post->save();
         
-    //     $post->tags()->attach($request->get('tags'));
+        $post->tags()->sync($request->get('tags'));
 
-    //     return back()->with('flash', 'Tu publicacion ha sido creada');
-    // }
+        return back()->with('flash', 'Tu publicacion ha sido guardada');
+    }
 }

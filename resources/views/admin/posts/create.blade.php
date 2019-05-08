@@ -1,4 +1,4 @@
-@extends('admin.layout')
+<!-- @extends('admin.layout')
 
 @section('header')
 <h1>
@@ -124,4 +124,4 @@
     </script>
     
 @endpush
-
+ -->
