@@ -15,6 +15,8 @@ function(){
     Route::get('posts/{post}', 'PostsController@edit')->name('admin.posts.edit');
     Route::put('posts/{post}', 'PostsController@update')->name('admin.posts.update');
 
+    Route::post('posts/{post}/photos', 'PhotosController@store')->name('admin.posts.photos.store');
+
     // rutas de administracion
 });
 

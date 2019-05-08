@@ -14,7 +14,7 @@
                     <input name="titulo" 
                         class="form-control"
                         value="{{ old('titulo') }}"
-                        placeholder="Ingresa aqui el titulo de la publicacion">
+                        placeholder="Ingresa aqui el titulo de la publicacion" required>
                     {!! $errors->first('titulo', '<span class="help-block">:message</span>') !!}
                     
                 </div>
