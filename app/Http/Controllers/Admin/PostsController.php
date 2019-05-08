@@ -28,26 +28,43 @@ class PostsController extends Controller
 
     public function store(Request $request)
     {
+        $this->validate($request, ['titulo' => 'required']);
 
-        $this->validate($request, [
-            'titulo' => 'required',
-            'cuerpo' => 'required',
-            'categoria' => 'required',
-            'tags' => 'required',
-            'extracto' => 'required'
+        $post = Post::create([
+            'titulo' => $request->get('titulo'),
+            'url' => str_slug($request->get('titulo')),
         ]);
-        // return Post::create($request->all());
-        $post = new Post;
-        $post->titulo = $request->get('titulo');
-        $post->url = str_slug($request->get('titulo'));
-        $post->cuerpo = $request->get('cuerpo');
-        $post->extracto = $request->get('extracto');
-        $post->fecha_publicacion = $request->get('fecha_publicacion') ?Carbon::parse($request->get('fecha_publicacion')) : null;
-        $post->categoria_id = $request->get('categoria');
-        $post->save();
-        
-        $post->tags()->attach($request->get('tags'));
 
-        return back()->with('flash', 'Tu publicacion ha sido creada');
+        return redirect()->route('admin.posts.edit', $post);
     }
+
+    public function edit(Post $post)
+    {
+        return view('admin.posts.edit', compact('post'));
+    }
+
+    // public function store(Request $request)
+    // {
+
+    //     $this->validate($request, [
+    //         'titulo' => 'required',
+    //         'cuerpo' => 'required',
+    //         'categoria' => 'required',
+    //         'tags' => 'required',
+    //         'extracto' => 'required'
+    //     ]);
+    //     // return Post::create($request->all());
+    //     $post = new Post;
+    //     $post->titulo = $request->get('titulo');
+    //     $post->url = str_slug($request->get('titulo'));
+    //     $post->cuerpo = $request->get('cuerpo');
+    //     $post->extracto = $request->get('extracto');
+    //     $post->fecha_publicacion = $request->get('fecha_publicacion') ?Carbon::parse($request->get('fecha_publicacion')) : null;
+    //     $post->categoria_id = $request->get('categoria');
+    //     $post->save();
+        
+    //     $post->tags()->attach($request->get('tags'));
+
+    //     return back()->with('flash', 'Tu publicacion ha sido creada');
+    // }
 }
