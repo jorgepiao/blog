@@ -9,7 +9,7 @@ class PaginasController extends Controller
 {
     public function home()
     {
-        $posts = Post::published()->get();
+        $posts = Post::published()->paginate(3);
 
         return view('welcome', compact('posts'));
     }
