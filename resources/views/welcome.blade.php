@@ -21,9 +21,20 @@
                         <img src="{{ url($photo->url) }}" class="img-responsive" alt="">
                     </figure>
                 @endforeach
-
             </div>
-        @endif
+
+            @elseif($post->iframe)
+                <div class="video">
+                
+                    <!-- CORTAMOS ESTO Y LO PEGAMOS MANUALMENTE EN EL CAMPO IFRAME DE LA BASE DE DATOS
+                    
+                    -->
+                    
+                    {!! $post->iframe !!}
+                
+                </div>
+                
+            @endif
 
         <div class="content-post">
             <header class="container-flex space-between">
