@@ -2,6 +2,7 @@
 
 Route::get('/', 'PaginasController@home');
 Route::get('blog/{post}', 'PostsController@show')->name('posts.show');
+Route::get('categorias/{categoria}', 'CategoriasController@show')->name('categorias.show');
 
 Route::group([
     'prefix' => 'admin', 

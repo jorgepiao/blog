@@ -2,7 +2,12 @@
 
 @section('content')
 
+
 <section class="posts container">
+
+@if (isset($categoria))
+	<h3>Publicaciones de la categoria {{ $categoria->nombre }}</h3>
+@endif
 
 @foreach($posts as $post)
 
@@ -35,7 +40,9 @@
                     <span class="c-gray-1">{{ $post->fecha_publicacion->format('M d') }}</span>
                 </div>
                 <div class="post-category">
-                    <span class="category text-capitalize">{{ $post->categoria->nombre }}</span>
+                    <span class="category text-capitalize">
+						<a href="{{ route('categorias.show', $post->categoria) }}">{{ $post->categoria->nombre }}</a>
+					</span>
                 </div>
             </header>
             <h1>{{ $post->titulo }}</h1>
