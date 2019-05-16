@@ -5,8 +5,8 @@
 
 <section class="posts container">
 
-@if (isset($categoria))
-	<h3>Publicaciones de la categoria {{ $categoria->nombre }}</h3>
+@if (isset($titulo))
+	<h3>{{ $titulo }}</h3>
 @endif
 
 @foreach($posts as $post)
@@ -54,7 +54,7 @@
                 </div>
                 <div class="tags container-flex">
                     @foreach($post->tags as $tag)
-                        <span class="tag c-gris text-capitalize">#{{ $tag->nombre }}</span>
+                        <span class="tag c-gris text-capitalize"><a href="{{ route('tags.show', $tag) }}">#{{ $tag->nombre }}</a></span>
                     @endforeach
                 </div>
             </footer>

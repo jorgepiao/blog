@@ -3,6 +3,7 @@
 Route::get('/', 'PaginasController@home');
 Route::get('blog/{post}', 'PostsController@show')->name('posts.show');
 Route::get('categorias/{categoria}', 'CategoriasController@show')->name('categorias.show');
+Route::get('tags/{tag}', 'TagsController@show')->name('tags.show');
 
 Route::group([
     'prefix' => 'admin', 
