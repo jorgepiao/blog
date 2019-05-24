@@ -1,6 +1,6 @@
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <form method="POST" action="{{ route('admin.posts.store') }}">  
+    <form method="POST" action="{{ route('admin.posts.store', '#create') }}">  
     {{ csrf_field() }}
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -11,10 +11,10 @@
             <div class="modal-body">
                 <div class="form-group {{ $errors->has('titulo') ? 'has-error' : '' }}">
                     <!-- <label>Titulo de la publicacion</label> -->
-                    <input name="titulo" 
+                    <input id="post-titulo" name="titulo" 
                         class="form-control"
                         value="{{ old('titulo') }}"
-                        placeholder="Ingresa aqui el titulo de la publicacion" required>
+                        placeholder="Ingresa aqui el titulo de la publicacion" autofocus required>
                     {!! $errors->first('titulo', '<span class="help-block">:message</span>') !!}
                     
                 </div>
@@ -27,3 +27,20 @@
     </div>
     </form>
 </div>
+
+@push('scripts')
+    <script>
+    if (window.location.hash === '#create'){
+      $('#myModal').modal('show');
+    }
+
+    $('#myModal').on('hide.bs.modal', function(){
+      window.location.hash = '#';
+    })
+
+    $('#myModal').on('shown.bs.modal', function(){
+      $('#post-titulo').focus();
+      window.location.hash = '#create';
+    })
+  </script>
+@endpush
