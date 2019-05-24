@@ -8,7 +8,7 @@ class Tag extends Model
 {
     public function getRouteKeyName()
     {
-    	return 'nombre';
+    	return 'url';
 	}
     
     // relacion muchos a muchos
@@ -16,4 +16,10 @@ class Tag extends Model
     {
     	return $this->belongsToMany(Post::class);
 	}
+
+	public function setNombreAttribute($nombre)
+    {
+		$this->attributes['nombre'] = $nombre;
+		$this->attributes['url'] = str_slug($nombre);
+    }
 }
