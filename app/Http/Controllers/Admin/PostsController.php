@@ -59,11 +59,25 @@ class PostsController extends Controller
         $post->cuerpo = $request->get('cuerpo');
         $post->iframe = $request->get('iframe');
         $post->extracto = $request->get('extracto');
-        $post->fecha_publicacion = $request->get('fecha_publicacion') ? Carbon::parse($request->get('fecha_publicacion')) : null;
-        $post->categoria_id = $request->get('categoria');
-        $post->save();
+        $post->fecha_publicacion = $request->has('fecha_publicacion')
+                                    ? Carbon::parse($request->get('fecha_publicacion'))
+                                    : null;
+
+        $post->categoria_id = Categoria::find($cat = $request->get('categoria'))
+                                ? $cat
+                                : Categoria::create(['nombre' => $cat])->id;
         
-        $post->tags()->sync($request->get('tags'));
+        $post->save(); 
+
+        
+        $tags = [];
+
+        foreach ($request->get('tags') as $tag){
+            $tags[] = Tag::find($tag)
+                        ? $tag
+                        : Tag::create(['nombre' => $tag])->id;
+        }
+        $post->tags()->sync($tags);
 
         return redirect()->route('admin.posts.edit', $post)->with('flash', 'Tu publicacion ha sido guardada');
     }
