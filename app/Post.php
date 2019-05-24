@@ -7,7 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    protected $guarded = [];
+    protected $fillable = [
+        'titulo', 'cuerpo', 'iframe', 'extracto', 'fecha_publicacion', 'categoria_id',
+    ];
 
     protected $dates = ['fecha_publicacion'];
 
@@ -44,5 +46,25 @@ class Post extends Model
     {
 		$this->attributes['titulo'] = $titulo;
 		$this->attributes['url'] = str_slug($titulo);
+    }
+
+    public function setFechaPublicacionAttribute($fecha_publicacion)
+    {
+        $this->attributes['fecha_publicacion'] = $fecha_publicacion ? Carbon::parse($fecha_publicacion) : null;
+    }
+
+    public function setCategoriaIdAttribute($categoria)
+    {
+        $this->attributes['categoria_id'] = Categoria::find($categoria)
+                                ? $categoria
+                                : Categoria::create(['nombre' => $categoria])->id;
+    }
+
+    public function syncTags($tags){
+        $tagIds = collect($tags)->map(function($tag){
+            return Tag::find($tag) ? $tag : Tag::create(['nombre' => $tag])->id;
+        });
+
+        return $this->tags()->sync($tagIds);
     }
 }
