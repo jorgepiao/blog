@@ -13,6 +13,16 @@ class Post extends Model
 
     protected $dates = ['fecha_publicacion'];
 
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::deleting(function($post){
+            $post->tags()->detach();
+            $post->photos->each->delete();
+        });
+    }
+
     public function getRouteKeyName()
     {
         return 'url';

@@ -51,6 +51,17 @@ class PostsController extends Controller
 
         $post->syncTags($request->get('tags'));
 
-        return redirect()->route('admin.posts.edit', $post)->with('flash', 'Tu publicacion ha sido guardada');
+        return redirect()
+            ->route('admin.posts.edit', $post)
+            ->with('flash', 'La publicacion ha sido guardada');
+    }
+
+    public function destroy(Post $post)
+    {
+        $post->delete();
+
+        return redirect()
+            ->route('admin.posts.index')
+            ->with('flash', 'La publicacion ha sido eliminada');
     }
 }
