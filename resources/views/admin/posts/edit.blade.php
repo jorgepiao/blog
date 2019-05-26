@@ -22,7 +22,7 @@
                     <div class="row">
                         @foreach ($post->photos as $photo)
                             <form method="POST" action="{{ route('admin.photos.destroy', $photo) }}">
-                                {{ method_field('DELETE') }} {{ csrf_field() }}
+                                {{ method_field('DELETE') }} @csrf
                                 <div class="col-md-2">
                                     <button class="btn btn-danger btn-xs" style="position: absolute">
                                         <i class="fa fa-remove"></i>
@@ -38,7 +38,7 @@
     @endif
 
     <form method="POST" action="{{ route('admin.posts.update', $post) }}">  
-    {{ csrf_field() }} {{ method_field('PUT') }}
+    @csrf {{ method_field('PUT') }}
     <div class="col-md-8">
         <div class="box box-primary">
 

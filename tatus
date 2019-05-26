@@ -1,0 +1,366 @@
+[33mcommit 5e47c995bffb196dd41e8224fa5ec1228c304805[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Sun May 26 05:40:45 2019 -0500
+
+    Politicas de acceso a publicaciones (policy)
+
+[33mcommit 9ec3e19f467e4395736b822cbc1cdfa2fc1691fc[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Sun May 26 04:33:37 2019 -0500
+
+    Vistas polimorficas.. reestructuracion de vistas
+
+[33mcommit e1f47fb1834aa742e659b2f99db4c71ad46bc469[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Sun May 26 04:01:06 2019 -0500
+
+    Asignar posts a usuarios
+
+[33mcommit c39f37337ecfa775d2546bdbceb3439b840aeecb[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Sat May 25 23:07:43 2019 -0500
+
+    Acceso a posts no publicos
+
+[33mcommit 351c393cbc73536d4bdda79e9672a4dad4738344[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Sat May 25 22:40:45 2019 -0500
+
+    Activando la navegacion y agregando contenido a las paginas estaticas
+
+[33mcommit c6e83c7727eca56e8dd13a773a355534fd8bee55[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Sat May 25 20:29:00 2019 -0500
+
+    Generando URLs unicas (id del post)
+
+[33mcommit e0addae6d34128182339147ff9e8dae07a2d26f4[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Fri May 24 18:43:35 2019 -0500
+
+    Mantener el modal (para crear nuevas publicaciones) si hay errores
+
+[33mcommit 52f31c04018a313ea191a99cc8704f2a5ebfd16e[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Fri May 24 18:12:18 2019 -0500
+
+    Eliminar posts y sus relaciones desde el boton del formulario de todos los posts
+
+[33mcommit e680ebd94c8e7eb085c369443bdee5b66dc20515[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Fri May 24 17:40:10 2019 -0500
+
+    >Reestructuracion del PhotosController (a medias)
+
+[33mcommit 7bd40da1cdcdd18bed812c1a078318a7c1de50c2[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Fri May 24 15:47:21 2019 -0500
+
+    Reestructuracion del PostsController.. codigo mas legible
+
+[33mcommit 43afa4169ebdf110a3df41b9959e682565d3fa52[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Fri May 24 03:44:59 2019 -0500
+
+    Creando etiquetas y categorias sobre la marcha.. desde el formulario de creacion de posts
+
+[33mcommit 19e9a6743c678352884a4f5ced80ad957c862171[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Fri May 24 03:23:11 2019 -0500
+
+    Accesores y mutadores de Eloquent
+
+[33mcommit e6d0ddd84b604fa156056f172ef047f9713c462c[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Thu May 16 04:06:03 2019 -0500
+
+    Filtrar posts por Etiquetas
+
+[33mcommit d4e2eb1f5ab65f7492e9c7d159442b562d0c1b71[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Thu May 16 03:47:40 2019 -0500
+
+    Filtrar posts por Categorias
+
+[33mcommit 36b2519b86d7855ff61146615037650717fb1409[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Mon May 13 04:51:30 2019 -0500
+
+    Paginacion
+
+[33mcommit 4902c8cd299de5afafe016370916565ff0432502[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Mon May 13 04:09:44 2019 -0500
+
+    Videos y audios a los posts
+
+[33mcommit 8eab2643ceb4d0e25c1a1ee1ffbc19b4cec38ac2[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Thu May 9 03:22:05 2019 -0500
+
+    Eliminar las fotos (imagenes) de la base de datos
+
+[33mcommit 96e2aa620773a7f2470bebbb8f41dd9870ca66ab[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Thu May 9 03:04:05 2019 -0500
+
+    Eliminar las fotos (imagenes) de los posts
+
+[33mcommit 9f88badad94520ebe17da346ed891ee26f8b4cd6[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Thu May 9 02:41:05 2019 -0500
+
+    Carrusel para la galeria de imagenes de los posts
+
+[33mcommit f9bf9ed5eb3b2de9da0d7d307218e081fcf99200[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Wed May 8 03:53:53 2019 -0500
+
+    Mostrando las fotos (imagenes) en la pagina de inicio (donde estan los extractos de los posts)
+
+[33mcommit 0cd9bfac3692879264b600f3b17c0478fb21e89d[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Wed May 8 03:10:34 2019 -0500
+
+    Almacenando las imagenes en el servidor (base de datos) y relacion uno a muchos entre post y photos
+
+[33mcommit 455e3413d6789bd9ccf2e797be4ba31d2bf3aeef[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Wed May 8 02:42:44 2019 -0500
+
+    Validacion de las imagenes
+
+[33mcommit 8d6d08dd058d5345e4599650646dc200914c469a[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Wed May 8 01:56:43 2019 -0500
+
+    Subir imagenes usando Dropzone JS
+
+[33mcommit 5d79a4222d2f924e9f4a5ec16859f7b678a4a08d[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Wed May 8 01:12:52 2019 -0500
+
+    Modal (ventana emergente) en el link de 'Crear un post'
+
+[33mcommit 50d335aade2263ee9a6a02861767097cc84679f5[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Wed May 8 01:05:50 2019 -0500
+
+    Pagina para editar el nuevo post creado con la ventana emergente (redireccion a la pagina para crear)
+
+[33mcommit aac5ae36a90dbb34408ee6966c15eed08c887c52[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Wed May 8 00:26:58 2019 -0500
+
+    Actualizar/crear publicaciones (boton) y modal de bootstrap (ventana emergente para agregar el titulo del nuevo post)
+
+[33mcommit 10d299f5747e4a713e56c5aac93308fe8ca9dfbd[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Fri May 3 16:43:59 2019 -0500
+
+    Social links
+
+[33mcommit 410dc4ce6fe5b02f0f9e67b2a1e54535ddc86a77[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Fri May 3 03:41:09 2019 -0500
+
+    Titulo y descripcion para SEO
+
+[33mcommit 63b4a2e46371c08c0464d98345820eaa4ef7199f[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Fri May 3 03:28:00 2019 -0500
+
+    Urls amigables
+
+[33mcommit fd80bf3c16c4dfa1b025a9d2644554bfbafe0137[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Fri May 3 03:02:09 2019 -0500
+
+    Mostrando informacion de la base de datos en la vista del post individual
+
+[33mcommit 011f0c3114d9906faf2bc94e9a05f6b00a75e6c8[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Fri May 3 02:51:20 2019 -0500
+
+    Plantilla de pagina (vista) para mostrar los posts individuales
+
+[33mcommit ff1aa86d00fc92bf32bcab472011159e52e9a6bf[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Thu Apr 25 04:04:40 2019 -0500
+
+    Restricciones en los posts publicados (Query scopes)
+
+[33mcommit 097d7dce707164a7261a2bee392912469e687573[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Thu Apr 25 02:56:21 2019 -0500
+
+    Validando el formulario de publicaciones y mensajes de error en el formulario
+
+[33mcommit 2f17fb6ea45008996708f7373cd3f82c0224fa1b[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Thu Apr 25 00:18:39 2019 -0500
+
+    Guardando las publicaciones en la base de datos
+
+[33mcommit 6421eb790cd9f2e0f6c40f666b6843a18d15aaf2[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Wed Apr 24 15:42:23 2019 -0500
+
+    Integrando un editor de contenido y un selector multiple para las etiquetas
+
+[33mcommit 5415cbd48ba0e2ed4b9cedd8b2da58e44d304bfe[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Wed Apr 24 05:07:51 2019 -0500
+
+    Selector de fecha (datepicker) en el formulario y selector de categorias
+
+[33mcommit 774a751aa3ca3d4e45832fda532a8b594aa5161c[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Wed Apr 24 04:32:17 2019 -0500
+
+    Creacion del formulario para ingresar posts
+
+[33mcommit 2c77b5e461ed9898f03bd2b77e2c696318373095[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Wed Apr 24 03:10:40 2019 -0500
+
+    Restauracion de codigo y activacion de links
+
+[33mcommit 222765c66902da0e7f7bd0d3bac939e0018cd3ac[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Tue Apr 23 04:04:29 2019 -0500
+
+    Mostrando los posts en una tabla en la pagina de administracion y una columna para las acciones..
+
+[33mcommit 67d68d0eb5a0512cdc0d3388a0da7644318689bf[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Mon Apr 22 04:36:21 2019 -0500
+
+    Se crearon controladores para el home y las paginas de la administracion
+
+[33mcommit 8c9a8fe47d7f7feffa9c35d891e5aeb22d4c35ac[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Mon Apr 22 04:04:11 2019 -0500
+
+    Perzonalizando la pagina de administracion (dashboard).. links en la barra lateral
+
+[33mcommit fe69f48b0fa539cf3787564de440b6ca005f6105[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Mon Apr 22 03:27:02 2019 -0500
+
+    Creacion de un usuario en la base de datos para iniciar sesion y un middleware('auth')
+    
+    ----------------------
+    php artisan tinker  $user = new App\User;
+    $user->name = "Jorge"
+    $user->email = "jorge@blog.com"
+    $user->password = bcrypt('123123')
+    $user->save()
+    -------------------------
+
+[33mcommit f74b6eed44bf2ed3c1a1a574009abdcc84be2233[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Mon Apr 22 02:44:04 2019 -0500
+
+    Se tradujo la pagina del login al esp¡añ.
+    
+    Se agregaron archivos de traduccion en resources/lang/es
+
+[33mcommit d40f0900b809d36d73a2ea38fbdd3665c21c0f1e[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Sat Apr 20 01:23:28 2019 -0500
+
+    ...
+
+[33mcommit 909ab1fee31ca170678c35a6eb072c8f6cf71466[m
+Merge: 56d5883 c1ba39f
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Sat Apr 20 01:01:31 2019 -0500
+
+    Solucion otro error con git.. login de la pagina de administracion
+
+[33mcommit 56d5883a4129b7f3acd51cd2e1e4f559fe4348bd[m
+Merge: f0eed03 390b983
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Sat Apr 20 00:56:11 2019 -0500
+
+    Solucionado error con ramas de git.. vista del login de la pagina de
+    administracion del blog
+
+[33mcommit c1ba39fcb9efdc029a05aa72b0886db8e3ebf421[m
+Merge: f0eed03 390b983
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Sat Apr 20 00:56:11 2019 -0500
+
+    Solucionado error con ramas de git.. vista del login de la pagina de administracion del blog
+
+[33mcommit f0eed03b23a7d5140973c065d78601ee27bcbbe7[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Sat Apr 20 00:49:51 2019 -0500
+
+    Se modificaron archivos referentes al 'login' de la pagina de administracion (dashboard) para solucionar algunos errores.
+
+[33mcommit 390b983cc6aeebfd2855693da1061072852daa4b[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Sat Apr 20 00:08:51 2019 -0500
+
+    Vista del 'login' de la pagina de administracion (dashboard).
+    
+    Plantilla 'AdminLTE'
+
+[33mcommit 5ac528f3ac8cc3e91fc9ceda726ea24f0c333108[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Fri Apr 19 23:12:28 2019 -0500
+
+    Se agrego la plantilla para la pagina de administracion (dashboard) y su
+    correspondiente ruta
+
+[33mcommit e0f492f47ffd02ebb56713602ef01782b35bf8bf[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Fri Apr 19 03:57:32 2019 -0500
+
+    Se crearon las etiquetas de los posts.. (relacion muchos a muchos)
+    
+    Se creo la tabla Tag y la tabla que relaciona el id del post y el id de la etiqueta (tag).
+
+[33mcommit e82fb46340d8e3ae91791dc1ba04b390f6316da0[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Fri Apr 19 03:31:50 2019 -0500
+
+    Se creo un 'seeder' para llenar la base de datos automaticamente
+
+[33mcommit d062c15e9f2bc4aafbe38246761f1a11768aca14[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Wed Apr 17 01:32:53 2019 -0500
+
+    Se creo el modelo 'Categoria' (tabla categorias) y se le agrego una categoria a cada post.. relacion uno a muchos con la tabla posts
+
+[33mcommit 15c1f0fb7414cbdc5fcfc844f170a86ebe7a4cce[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Wed Apr 17 00:35:07 2019 -0500
+
+    Dandole formato a la fecha de publicacion de los posts
+
+[33mcommit 9d3e65b0732617ab6736e358d27748c6aecb3ebe[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Wed Apr 17 00:29:12 2019 -0500
+
+    Mostrando los posts desde la base de datos
+
+[33mcommit 2f143b89e6369a55b223c3ad4743cfa6ad2bb5bc[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Tue Apr 16 22:20:19 2019 -0500
+
+    Creacion de la base de datos y primera migracion.. Creacion del modelo Post, su migracion y definicion del esquema (campos de la tabla Post).
+
+[33mcommit e6a5edd2c6a9b017314b071a61615da289776ad3[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Tue Apr 16 21:13:44 2019 -0500
+
+    Se agrego el template que se utilizara para el blog y se creo el archivo layout.blade.php para el header y el footer.
+
+[33mcommit c24d5efc787eab0fd139bb87ea496df1b5214765[m
+Author: jorgepiao <piaosin11@gmail.com>
+Date:   Tue Apr 16 20:38:51 2019 -0500
+
+    Inicio del proyecto blog

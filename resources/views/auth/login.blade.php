@@ -39,7 +39,7 @@
     <!-- <form method="POST" action="{{ route('login') }}">
         @csrf -->
     <form role="form" method="POST" action="{{ route('login') }}">
-        {{ csrf_field() }}
+        @csrf
 
       <div class="form-group {{ $errors->has('email') ? ' has-error' : '' }} has-feedback">
         <input type="email" 

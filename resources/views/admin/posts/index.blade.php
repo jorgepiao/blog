@@ -52,7 +52,7 @@
                     <form method="POST"
                         action="{{ route('admin.posts.destroy', $post) }}"
                         style="display: inline">
-                        {{ csrf_field() }} {{ method_field('DELETE') }}
+                        @csrf {{ method_field('DELETE') }}
                         <button class="btn btn-xs btn-danger"
                             onclick="return confirm('¿Estas seguro de querer eliminar esta publicacion?')"
                         ><i class="fa fa-times"></i></button>
