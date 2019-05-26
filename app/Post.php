@@ -52,6 +52,13 @@ class Post extends Model
                 ->latest('fecha_publicacion');
     }
 
+    public function isPublished()
+    {
+        // return (bool) $this->fecha_publicacion;
+
+        return ! is_null($this->fecha_publicacion) && $this->fecha_publicacion < today();
+    }
+
     public static function create(array $attributes = [])
     {
         $post = static::query()->create($attributes);

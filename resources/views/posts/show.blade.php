@@ -20,11 +20,16 @@
         <div class="content-post">
         <header class="container-flex space-between">
             <div class="date">
-            <span class="c-gris">{{ $post->fecha_publicacion->format('M d') }}</span>
+                <span class="c-gris">{{ optional($post->fecha_publicacion)->format('M d') }}</span>
             </div>
-            <div class="post-category">
-            <span class="category ">{{ $post->categoria->nombre }}</span>
-            </div>
+
+            @if ($post->categoria)
+                <div class="post-category">
+                    <span class="category ">{{ $post->categoria->nombre }}</span>
+                </div>
+            @endif
+
+
         </header>
         <h1>{{ $post->titulo }}</h1>
             <div class="divider"></div>
