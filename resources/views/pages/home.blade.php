@@ -37,7 +37,9 @@
         <div class="content-post">
             <header class="container-flex space-between">
                 <div class="date">
-                    <span class="c-gray-1">{{ $post->fecha_publicacion->format('M d') }}</span>
+                    <span class="c-gris">
+                        {{ $post->fecha_publicacion->format('M d') }} / {{ $post->owner->name }}
+                    </span>
                 </div>
                 <div class="post-category">
                     <span class="category text-capitalize">

@@ -17,11 +17,12 @@ class CreatePostsTable extends Migration
             $table->bigIncrements('id');
             $table->string('titulo');
             $table->string('url')->unique()->nullable();
-            $table->mediumText('extracto')->nullable();
-            $table->text('iframe')->nullable();
-            $table->text('cuerpo')->nullable();
+            $table->text('extracto')->nullable();
+            $table->mediumText('iframe')->nullable();
+            $table->mediumText('cuerpo')->nullable();
             $table->timestamp('fecha_publicacion')->nullable();
             $table->unsignedInteger('categoria_id')->nullable();
+            $table->unsignedInteger('user_id');
             $table->timestamps();
         });
     }
