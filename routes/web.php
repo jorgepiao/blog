@@ -1,6 +1,10 @@
 <?php
 
-Route::get('/', 'PaginasController@home');
+Route::get('/', 'PaginasController@home')->name('pages.home');
+Route::get('nosotros', 'PaginasController@about')->name('pages.about');
+Route::get('archivo', 'PaginasController@archive')->name('pages.archive');
+Route::get('contacto', 'PaginasController@contact')->name('pages.contact');
+
 Route::get('blog/{post}', 'PostsController@show')->name('posts.show');
 Route::get('categorias/{categoria}', 'CategoriasController@show')->name('categorias.show');
 Route::get('tags/{tag}', 'TagsController@show')->name('tags.show');
