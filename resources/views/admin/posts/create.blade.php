@@ -1,7 +1,8 @@
 <!-- Modal -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <form method="POST" action="{{ route('admin.posts.store', '#create') }}">  
-    {{ csrf_field() }}
+    {{-- {{ csrf_field() }} --}}
+    @csrf
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
