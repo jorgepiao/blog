@@ -52,11 +52,41 @@ class Post extends Model
                 ->latest('fecha_publicacion');
     }
 
-    public function setTituloAttribute($titulo)
+    public static function create(array $attributes = [])
     {
-		$this->attributes['titulo'] = $titulo;
-		$this->attributes['url'] = str_slug($titulo);
+        $post = static::query()->create($attributes);
+
+        $post->generateUrl();
+
+        return $post;
     }
+
+    public function generateUrl(){
+        $url = str_slug($this->titulo);
+
+        if ($this->whereUrl($url)->exists()){
+            $url = "{$url}-{$this->id}";
+        }
+
+        $this->url = $url;
+
+        $this->save();
+    }
+
+    // public function setTituloAttribute($titulo)
+    // {
+    //     $this->attributes['titulo'] = $titulo;
+        
+    //     $originalUrl = str_slug($titulo);
+    //     $duplicateUrlCount = Post::where('url', 'LIKE', "{$url}%")->count();
+    //     $count = 1;
+
+    //     while($Post::where('url', $url)->exists()){
+    //         $url = "{$originalUrl}-" . ++$count;
+    //     }
+
+    //     $this->attributes['url'] = $url;
+    // }
 
     public function setFechaPublicacionAttribute($fecha_publicacion)
     {
