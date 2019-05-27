@@ -1,5 +1,9 @@
 <?php
 
+// Route::get('email', function() {
+//   return new App\Mail\LoginCredentials(App\User::first(), 'asd123');
+// });
+
 Route::get('/', 'PaginasController@home')->name('pages.home');
 Route::get('nosotros', 'PaginasController@about')->name('pages.about');
 Route::get('archivo', 'PaginasController@archive')->name('pages.archive');
