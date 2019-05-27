@@ -54,7 +54,8 @@
                     <form method="user"
                         action="{{ route('admin.users.destroy', $user) }}"
                         style="display: inline">
-                        @csrf {{ method_field('DELETE') }}
+                        @csrf
+                        @method('DELETE')
                         <button class="btn btn-xs btn-danger"
                             onclick="return confirm('¿Estas seguro de querer eliminar este usuario?')"
                         ><i class="fa fa-times"></i></button>
