@@ -18,6 +18,9 @@
           @endforeach
         </ul>
         @endif
+
+        @include('partials.error-messages')
+        
         <form method="POST" action="{{ route('admin.users.store') }}">
           @csrf
 

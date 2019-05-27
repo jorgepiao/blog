@@ -1,8 +1,10 @@
 <?php
 namespace App\Http\Controllers\Admin;
 use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+
 class RolesController extends Controller
 {
 	public function index()
@@ -19,7 +21,10 @@ class RolesController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.roles.create', [
+			'role' => New Role,
+			'permissions' => Permission::pluck('name', 'id')
+		]);
     }
     /**
      * Store a newly created resource in storage.
@@ -29,7 +34,16 @@ class RolesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+			'name' => 'required',
+			'guard_name' => 'required'
+		]);
+		$role = Role::create($data);
+		if ($request->has('permissions'))
+		{
+			$role->givePermissionTo($request->permissions);
+		}
+		return redirect()->route('admin.roles.index')->withFlash('El role fue creado correctamente');
     }
     /**
      * Display the specified resource.
