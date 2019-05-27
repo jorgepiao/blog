@@ -9,7 +9,7 @@
 	<h3>{{ $titulo }}</h3>
 @endif
 
-@foreach($posts as $post)
+@forelse($posts as $post)
 
     <article class="post">
     
@@ -34,7 +34,14 @@
         </div>
     </article>
 
-@endforeach
+    @empty
+        <article class="post">
+            <div class="content-post">
+                <h1>No hay publicaciones todavía.</h1>
+            </div>
+        </article>
+
+@endforelse
 </section><!-- fin del div.posts.container -->
 
     {{ $posts->links() }}
