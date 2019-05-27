@@ -36,9 +36,14 @@ class UsersController extends Controller
         $this->authorize('create', $user);
         
         $roles = Role::with('permissions')->get();
-        $permissions = Permission::pluck('name', 'id');
 
-        return view('admin.users.create', compact('user', 'roles', 'permissions'));
+        $user->update( $request->validated() );
+
+        return redirect()->route('admin.users.edit', $user)->withFlash('Usuario actualizado');
+
+        // $permissions = Permission::pluck('name', 'id');
+
+        // return view('admin.users.create', compact('user', 'roles', 'permissions'));
     }
 
     /**
@@ -144,8 +149,10 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(User $user)
     {
-        //
+        $this->authorize('delete', $user);
+		$user->delete();
+		return redirect()->route('admin.users.index')->withFlash('Usuario eliminado');
     }
 }

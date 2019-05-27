@@ -22,6 +22,9 @@ class CreatePostsTable extends Migration
             $table->mediumText('cuerpo')->nullable();
             $table->timestamp('fecha_publicacion')->nullable();
             $table->unsignedInteger('categoria_id')->nullable();
+
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            
             $table->unsignedInteger('user_id');
             $table->timestamps();
         });
