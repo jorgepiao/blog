@@ -20,6 +20,7 @@ Route::group([
     Route::resource('users', 'UsersController', ['as' => 'admin']);
 
     Route::put('users/{user}/roles', 'UsersRolesController@update')->name('admin.users.roles.update');
+    Route::put('users/{user}/permissions', 'UsersPermissionsController@update')->name('admin.users.permissions.update');
 
     // Route::get('posts', 'PostsController@index')->name('admin.posts.index');
     // Route::get('posts/create', 'PostsController@create')->name('admin.posts.create');
