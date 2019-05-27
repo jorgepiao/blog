@@ -37,13 +37,9 @@ class UsersController extends Controller
         
         $roles = Role::with('permissions')->get();
 
-        $user->update( $request->validated() );
+        $permissions = Permission::pluck('name', 'id');
 
-        return redirect()->route('admin.users.edit', $user)->withFlash('Usuario actualizado');
-
-        // $permissions = Permission::pluck('name', 'id');
-
-        // return view('admin.users.create', compact('user', 'roles', 'permissions'));
+        return view('admin.users.create', compact('user', 'roles', 'permissions'));
     }
 
     /**

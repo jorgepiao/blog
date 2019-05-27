@@ -42,24 +42,30 @@
                 <td>{{ $user->email }}</td>
                 <td>{{ $user->getRoleNames()->implode(', ') }}</td>
                 <td>
-                    <a href="{{ route('admin.users.show', $user) }}"
-                        class="btn btn-xs btn-default"
-                        target="_blank"
-                    ><i class="fa fa-eye"></i> </a>
+                    @can('view', $user)
+                        <a href="{{ route('admin.users.show', $user) }}"
+                            class="btn btn-xs btn-default"
+                            target="_blank"
+                        ><i class="fa fa-eye"></i> </a>
+                    @endcan
 
-                    <a href="{{ route('admin.users.edit', $user) }}"
-                        class="btn btn-xs btn-info"
-                    ><i class="fa fa-pencil"></i></a>
+                    @can('update', $user)
+                        <a href="{{ route('admin.users.edit', $user) }}"
+                            class="btn btn-xs btn-info"
+                        ><i class="fa fa-pencil"></i></a>
+                    @endcan
 
-                    <form method="user"
-                        action="{{ route('admin.users.destroy', $user) }}"
-                        style="display: inline">
-                        @csrf
-                        @method('DELETE')
-                        <button class="btn btn-xs btn-danger"
-                            onclick="return confirm('¿Estas seguro de querer eliminar este usuario?')"
-                        ><i class="fa fa-times"></i></button>
-                    </form>
+                    @can('delete', $user)
+                        <form method="POST"
+                            action="{{ route('admin.users.destroy', $user) }}"
+                            style="display: inline">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-xs btn-danger"
+                                onclick="return confirm('¿Estas seguro de querer eliminar este usuario?')"
+                            ><i class="fa fa-times"></i></button>
+                        </form>
+                    @endcan
 
                 </td>
             </tr>
