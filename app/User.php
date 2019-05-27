@@ -47,4 +47,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function scopeAllowed($query)
+	{
+		if (auth()->user()->can('view', $this)) {
+			return $query;
+        }
+        
+		return $query->where('id', auth()->id());
+	}
 }
