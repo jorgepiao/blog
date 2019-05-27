@@ -95,7 +95,7 @@ desired effect
                     <a href="#">
                       <div class="pull-left">
                         <!-- User Image -->
-                        <img src="/adminlte/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                        <img src="/adminlte/img/avatar04.png" class="img-circle" alt="User Image">
                       </div>
                       <!-- Message title and timestamp -->
                       <h4>
@@ -180,17 +180,17 @@ desired effect
             <!-- Menu Toggle Button -->
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <!-- The user image in the navbar-->
-              <img src="/adminlte/img/user2-160x160.jpg" class="user-image" alt="User Image">
+              <img src="/adminlte/img/avatar04.png" class="user-image" alt="User Image">
               <!-- hidden-xs hides the username on small devices so only the image appears. -->
               <span class="hidden-xs">{{ auth()->user()->name }}</span>
             </a>
             <ul class="dropdown-menu">
               <!-- The user image in the menu -->
               <li class="user-header">
-                <img src="/adminlte/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="/adminlte/img/avatar04.png" class="img-circle" alt="User Image">
 
                 <p>
-                  {{ auth()->user()->name }}
+                  {{ auth()->user()->name }} - {{ auth()->user()->roles->first()->name }}
                   <small>Desde {{ auth()->user()->created_at->format('d/M/Y') }}</small>
                 </p>
               </li>
@@ -245,7 +245,7 @@ desired effect
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel">
         <div class="pull-left image">
-          <img src="/adminlte/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+          <img src="/adminlte/img/avatar04.png" class="img-circle" alt="User Image">
         </div>
         <div class="pull-left info">
           <p>{{ auth()->user()->name }}</p>
