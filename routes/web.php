@@ -33,10 +33,10 @@ Route::group([
     // Route::put('posts/{post}', 'PostsController@update')->name('admin.posts.update');
     // Route::delete('posts/{post}', 'PostsController@destroy')->name('admin.posts.destroy');
     
-    Route::middleware('role:Admin')
+    Route::middleware('role:Administrador')
 		->put('users/{user}/roles', 'UsersRolesController@update')
 		->name('admin.users.roles.update');
-    Route::middleware('role:Admin')
+    Route::middleware('role:Administrador')
 		->put('users/{user}/permissions', 'UsersPermissionsController@update')
 		->name('admin.users.permissions.update');
 

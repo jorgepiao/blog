@@ -31,7 +31,7 @@ class PermissionsController extends Controller
 		$this->authorize('update', $permission);
 		
 		$data = $request->validate(['name' => 'required']);
-        $permission->update($data);
+    $permission->update($data);
         
 		return redirect()->route('admin.permissions.index', $permission)->withFlash('El permiso ha sido actualizado');
 	}

@@ -12,7 +12,7 @@ class PostPolicy
 
     public function before($user)
     {
-        if ($user->hasRole('Admin') )
+        if ($user->hasRole('Administrador') )
         {
             return true;
         }
@@ -28,7 +28,7 @@ class PostPolicy
     public function view(User $user, Post $post)
     {
         return $user->id === $post->user_id
-            || $user->hasPermissionTo('View posts');
+            || $user->hasPermissionTo('Ver publicaciones');
     }
 
     /**
@@ -39,7 +39,7 @@ class PostPolicy
      */
     public function create(User $user)
     {
-        return $user->hasPermissionTo('Create posts');
+        return $user->hasPermissionTo('Crear publicaciones');
     }
 
     /**
@@ -52,7 +52,7 @@ class PostPolicy
     public function update(User $user, Post $post)
     {
         return $user->id === $post->user_id
-            || $user->hasPermissionTo('Update posts');
+            || $user->hasPermissionTo('Actualizar publicaciones');
     }
 
     /**
@@ -65,7 +65,7 @@ class PostPolicy
     public function delete(User $user, Post $post)
     {
         return $user->id === $post->user_id
-            || $user->hasPermissionTo('Delete posts');
+            || $user->hasPermissionTo('Eliminar publicaciones');
     }
 
     /**

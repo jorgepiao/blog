@@ -14,7 +14,7 @@ class SaveRolesRequest extends FormRequest
 	public function rules()
 	{
 		$rules = [
-			'display_name' => 'required'
+			'name' => 'required'
         ];
         
 		if ($this->method() !== 'PUT') {
@@ -29,7 +29,7 @@ class SaveRolesRequest extends FormRequest
 		return [
 			'name.required' => 'El identificador del rol es obligatorio.',
 			'name.unique' 	=> 'Este identificador ya ha sido registrado.',
-			'display_name.required' => 'El nombre del rol es obligatorio.'
+			'name.required' => 'El nombre del rol es obligatorio.'
 		];
 	}
 } 
