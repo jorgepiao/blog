@@ -41,7 +41,7 @@
 
           <div class="form-group col-md-6">
             <label>Permisos</label>
-            @include('admin.permissions.checkboxes')
+            @include('admin.permissions.checkboxes', ['model' => $user])
           </div>
 
           <span class="help-block">La contraseña será generada y enviada al nuevo usuario vía email</span>
