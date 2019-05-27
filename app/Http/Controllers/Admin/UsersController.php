@@ -46,12 +46,33 @@ class UsersController extends Controller
     public function store(Request $request)
     {
         // Validar el formulario
+        $data = $request->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|email|max:255|unique:users',
+        ]);
+
         // Generar una contraseña
+        $data['password'] = str_random(8);
+
         // Creamos el usuario
+        $user = User::create($data);
+
         // Asignamos los roles
+        if($request->filled('roles'))
+        {
+            $user->assignRole($request->roles);
+        }
+
         // Asignamos los permisos
+        if ($request->filled('permissions'))
+        {
+            $user->givePermissionTo($request->permissions);
+        }
+
         // Enviamos el email
         // Regresamos al usuario
+
+        return redirect()->route('admin.users.index')->withFlash('El usuario ha sido creado');
     }
 
     /**
